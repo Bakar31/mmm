@@ -1,0 +1,23 @@
+[project]
+name = "meetingminutes"
+version = "0.1.0"
+description = "MeetingMinutes using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.102.0,<1.0.0"
+]
+
+[project.scripts]
+meetingminutes = "meetingminutes.main:run"
+run_crew = "meetingminutes.main:run"
+train = "meetingminutes.main:train"
+replay = "meetingminutes.main:replay"
+test = "meetingminutes.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

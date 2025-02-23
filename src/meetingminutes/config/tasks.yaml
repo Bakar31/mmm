@@ -1,0 +1,23 @@
+transcribe_task:
+  description: >
+    Clean up the raw meeting transcript and structure it into readable sections.
+  expected_output: >
+    A cleaned-up, well-structured meeting transcript.
+  agent: transcriber
+
+summarize_task:
+  description: >
+    Summarize the structured transcript into key meeting notes and highlights.
+  expected_output: >
+    A concise meeting summary with important discussion points.
+  agent: summarizer
+  depends_on: transcribe_task
+
+action_task:
+  description: >
+    Extract clear action items from the meeting, including responsible persons and deadlines.
+  expected_output: >
+    A list of action items with assignees and due dates.
+    Formatted as markdown without '```'
+  agent: action_extractor
+  depends_on: summarize_task
