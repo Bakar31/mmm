@@ -3,11 +3,15 @@
 MMM (Meeting Minutes Master) is an AI-powered tool built with CrewAI and Streamlit that processes meeting transcripts, extracts key points, and generates structured notes and action items.
 
 ## Features
-- 📝 Paste a meeting transcript and get AI-generated structured minutes
+- 📝 Upload or paste a meeting transcript and get AI-generated structured minutes
+- 🔊 Supports automatic audio transcription using Whisper
 - ✅ Extracts action items automatically
 - 📊 Displays CrewAI execution details, including token usage
 - 🚀 Simple and intuitive Streamlit-based UI
 - 🧹 Clear output with a single click
+
+## Demo
+[demo.webm](https://github.com/user-attachments/assets/1261943c-5713-4bd6-8750-284004db6705)
 
 ## Understanding MMM Crew
 
@@ -18,6 +22,7 @@ The MeetingMinutesMaster Crew is composed of multiple AI agents, each with uniqu
 - **Python** – Core programming language
 - **Streamlit** – For interactive UI
 - **CrewAI** – AI-powered meeting processing
+-  **Whisper** – For automatic speech-to-text transcription
 
 ## Installation
 
