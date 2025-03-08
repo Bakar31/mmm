@@ -10,6 +10,9 @@ MMM (Meeting Minutes Master) is an AI-powered tool built with CrewAI and Streaml
 - 🚀 Simple and intuitive Streamlit-based UI
 - 🧹 Clear output with a single click
 
+## Demo
+[demo.webm](https://github.com/user-attachments/assets/1261943c-5713-4bd6-8750-284004db6705)
+
 ## Understanding MMM Crew
 
 The MeetingMinutesMaster Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
