@@ -26,40 +26,48 @@ The MeetingMinutesMaster Crew is composed of multiple AI agents, each with uniqu
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+Ensure you have Python >=3.10 <3.13 installed on your system.
 
-First, if you haven't already, install uv:
+1.  **Create a Virtual Environment:**
+    It's recommended to create a virtual environment to manage dependencies:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
 
-```bash
-pip install uv
-```
+2.  **Install Dependencies:**
+    Install the required packages using the `requirements.txt` file:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *Note:* This project uses [UV](https://docs.astral.sh/uv/) for potentially faster dependency management. If you have `uv` installed (`pip install uv`), you can often use `uv pip install -r requirements.txt` for quicker installation.
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/meetingminutes/config/agents.yaml` to define your agents
-- Modify `src/meetingminutes/config/tasks.yaml` to define your tasks
-- Modify `src/meetingminutes/crew.py` to add your own logic, tools and specific args
-- Modify `src/meetingminutes/main.py` to add custom inputs for your agents and tasks
+3.  **Add API Key:**
+    Copy the `.env.example` file to `.env` and add your `GROQ_API_KEY`:
+    ```bash
+    cp .env.example .env
+    # Now edit the .env file and add your key
+    ```
 
 ## Running the Project
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+To run the Meeting Minutes Master application:
 
 ```bash
-$ crewai run
+streamlit run src/meetingminutes/main.py
 ```
 
-This command initializes the MeetingMinutes Crew, assembling the agents and assigning them tasks as defined in your configuration.
+> **Important Notes:**
+> *   **First Run:** The first time you run the application, it will download the Whisper model for audio transcription. This might take some time depending on your internet speed and the model size chosen.
+> *   **Whisper Model Size:** If you experience performance issues or have limited hardware resources, consider using smaller Whisper models (e.g., 'tiny', 'base'). You might need to adjust the model selection within the application code (`src/meetingminutes/transcription.py` or similar) if this option isn't exposed in the UI.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+## Roadmap
+
+Here's a glimpse into the future plans for MMM:
+
+- [ ] **Ollama Support:** Integrate local LLM support via Ollama for enhanced privacy and offline capabilities.
+- [ ] **UI Revamp:** Rebuild the user interface using React for a more modern and potentially more interactive experience.
+- [ ] **Docker Support:** Provide Dockerfile and docker-compose configurations for easier deployment and environment consistency.
 
 ## Contributing
 Feel free to fork the repository and submit pull requests! Contributions are always welcome.
